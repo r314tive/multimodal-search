@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres-15-multimodal-search
+    environment:
+      POSTGRES_USER: m_search
+      POSTGRES_PASSWORD: m_search
+      POSTGRES_DB: m_search
+    ports:
+      - "6543:5432"
+    volumes:
+      - ./database/postgresql/:/var/lib/postgresql/
